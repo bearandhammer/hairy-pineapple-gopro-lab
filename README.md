@@ -2,7 +2,7 @@
   - [Code Structure :pencil2:](#code-structure-pencil2)
   - [Implementation Ideas :thought_balloon:](#implementation-ideas-thought_balloon)
   - [Tooling Ideas :toolbox:](#tooling-ideas-toolbox)
-  - [Notes :spiral_note_pad:](#notes-spiral_note_pad)
+  - [Notes :spiral_notepad:](#notes-spiral_notepad)
 
 # hairy-pineapple-gopro-lab :pineapple:
 A .NET MAUI application that that allows user to capture configuration sets and apply these to a GoPro device on-demand.
@@ -35,7 +35,7 @@ I have the following in mind, depending on how implementations pan out.
 - BlueTooth LE: [32feet.NET](https://github.com/inthehand/32feet) (requires further investigation).
 - Use of ViewModels and Commands, with DI.
 
-## Notes :spiral_note_pad:
+## Notes :spiral_notepad:
 
 Currently designated as:
 

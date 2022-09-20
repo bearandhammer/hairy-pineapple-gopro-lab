@@ -25,8 +25,4 @@
 	  <ProjectReference Include="..\Hairy.Pineapple.GoPro.Lab.DataAccess.Entities\Hairy.Pineapple.GoPro.Lab.DataAccess.Entities.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Configuration\" />
-	</ItemGroup>
-
 </Project>

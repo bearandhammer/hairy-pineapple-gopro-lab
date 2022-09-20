@@ -5,7 +5,11 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hairy.Pineapple.GoPro.Lab", "Hairy.Pineapple.GoPro.Lab\Hairy.Pineapple.GoPro.Lab.csproj", "{957BA92F-E3F3-42F3-A4E0-0DD5690ECCAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hairy.Pineapple.GoPro.Lab.Test", "Hairy.Pineapple.GoPro.Lab.Test\Hairy.Pineapple.GoPro.Lab.Test.csproj", "{0D8675D8-A4F2-4810-8E7F-CBE0C4DE0906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hairy.Pineapple.GoPro.Lab.Test", "Hairy.Pineapple.GoPro.Lab.Test\Hairy.Pineapple.GoPro.Lab.Test.csproj", "{0D8675D8-A4F2-4810-8E7F-CBE0C4DE0906}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hairy.Pineapple.GoPro.Lab.DataAccess", "Hairy.Pineapple.GoPro.Lab.DataAccess\Hairy.Pineapple.GoPro.Lab.DataAccess.csproj", "{C99D5988-A3CF-4668-90AF-B5BAB3011D54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hairy.Pineapple.GoPro.Lab.DataAccess.Entities", "Hairy.Pineapple.GoPro.Lab.DataAccess.Entities\Hairy.Pineapple.GoPro.Lab.DataAccess.Entities.csproj", "{369631E9-C653-4CA7-A8DB-04AA9C634C33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,14 @@ Global
 		{0D8675D8-A4F2-4810-8E7F-CBE0C4DE0906}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D8675D8-A4F2-4810-8E7F-CBE0C4DE0906}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D8675D8-A4F2-4810-8E7F-CBE0C4DE0906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C99D5988-A3CF-4668-90AF-B5BAB3011D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C99D5988-A3CF-4668-90AF-B5BAB3011D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C99D5988-A3CF-4668-90AF-B5BAB3011D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C99D5988-A3CF-4668-90AF-B5BAB3011D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{369631E9-C653-4CA7-A8DB-04AA9C634C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{369631E9-C653-4CA7-A8DB-04AA9C634C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369631E9-C653-4CA7-A8DB-04AA9C634C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{369631E9-C653-4CA7-A8DB-04AA9C634C33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -48,4 +48,8 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Hairy.Pineapple.GoPro.Lab.DataAccess\Hairy.Pineapple.GoPro.Lab.DataAccess.csproj" />
+	</ItemGroup>
+
 </Project>

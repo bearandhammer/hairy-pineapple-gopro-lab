@@ -2,12 +2,12 @@
 {
     public class PresetHeader
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
-        public Guid UniqueId { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         public string Description { get; set; } = string.Empty;
 
-        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public DateTime CreationDateTimeUtc { get; set; } = DateTime.UtcNow;
     }
 }

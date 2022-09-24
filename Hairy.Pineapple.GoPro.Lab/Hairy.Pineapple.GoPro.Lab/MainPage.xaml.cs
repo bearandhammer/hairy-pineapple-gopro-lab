@@ -9,10 +9,10 @@ public partial class MainPage : ContentPage
 	private readonly GoProLabDbContext dbContext;
 	int count = 0;
 
-	public MainPage(GoProLabDbContext dbContextType)
-	{
+	public MainPage()   //GoProLabDbContext dbContextType
+    {
 		InitializeComponent();
-		dbContext = dbContextType;
+		//dbContext = dbContextType;
 	}
 
 	private void OnCounterClicked(object sender, EventArgs e)
@@ -34,27 +34,27 @@ public partial class MainPage : ContentPage
 			#region Sample Code (pre-DI)
 
 			using (GoProLabDbContext dbContext = new())
-			{
+			{ 
 				// Migrate
 				dbContext.Database.Migrate();
 
-				string samplePresetDescription = "hello world";
+				string samplePresetName = "Holy Grail Time-lapse";
 
 				// Add sample record, if one does not exist
-				if (dbContext.PresetHeaders.Count() == 0)
+				if (!dbContext.PresetHeaders.Any(ph => ph.Name.Equals(samplePresetName)))
 				{
 					dbContext.PresetHeaders.Add(new PresetHeader
 					{
-						Description = samplePresetDescription,
-						UniqueId = Guid.NewGuid()
-					});
+						Description = "This is for a Holy Grail time-lapse.",
+						Name = samplePresetName
+                    });
 
 					dbContext.SaveChanges();
 				}
 
 				// Retrieve sample
-				PresetHeader discoveredPresetHeader = 
-					dbContext.PresetHeaders.FirstOrDefault(ph => ph.Description.Equals(samplePresetDescription));
+				PresetHeader discoveredPresetHeader =
+					dbContext.PresetHeaders.FirstOrDefault(ph => ph.Name.Equals(samplePresetName));
 
 				if (discoveredPresetHeader is not null)
 				{

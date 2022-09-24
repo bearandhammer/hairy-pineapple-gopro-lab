@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Migrations
 {
     [DbContext(typeof(GoProLabDbContext))]
-    [Migration("20220924074856_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20220924142908_AddPresetHeadersTable")]
+    partial class AddPresetHeadersTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,26 +21,28 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Migrations
 
             modelBuilder.Entity("Hairy.Pineapple.GoPro.Lab.DataAccess.Entities.Models.PresetHeader", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("TEXT");
+                    b.Property<DateTime>("CreationDateTimeUtc")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasDefaultValueSql("DATETIME('now')");
 
                     b.Property<string>("Description")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("UniqueId")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UniqueId")
-                        .IsUnique();
-
-                    b.ToTable("PresetHeader");
+                    b.ToTable("PresetHeaders", (string)null);
                 });
 #pragma warning restore 612, 618
         }

@@ -6,26 +6,31 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Context
 {
     public class GoProLabDbContext : DbContext
     {
-        public GoProLabDbContext()
-        {
-        }
+        private static bool initialised = false;
 
-        public GoProLabDbContext(DbContextOptions options) : base(options)
-        {
-        }
-
-        public virtual DbSet<PresetHeader> PresetHeaders { get; set; }
+        public virtual DbSet<PresetHeader> PresetHeaders => Set<PresetHeader>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var sqlitePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"GoProLab\Data1");
+            string sqlitePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"GoProLab\PresetData");
             Directory.CreateDirectory(sqlitePath);
-            var fileName = $"{sqlitePath}\test.db";
-            if (!File.Exists(fileName))
+            
+            string fileName = $"{sqlitePath}\ttest.db";
+
+            if (!initialised)
+            { 
+                if (File.Exists(fileName))
+                {
+                    File.Delete(fileName);
+                }
+
                 File.Create(fileName);
+            }
 
             optionsBuilder.UseSqlite($"Data Source={fileName}", options =>
                 options.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name));
+
+            initialised = true;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

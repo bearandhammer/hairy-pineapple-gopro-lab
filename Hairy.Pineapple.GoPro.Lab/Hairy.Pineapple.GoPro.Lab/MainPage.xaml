@@ -28,12 +28,21 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+            <HorizontalStackLayout>
+            
+                <Button
+                    x:Name="CounterBtn"
+                    Text="Click me"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Clicked="OnCounterClicked" />
+                
+                <Button
+                    x:Name="TestDbBtn"
+                    Text="Test DB"
+                    SemanticProperties.Hint="Test DB"
+                    Clicked="OnTestDbClicked" />
+                
+            </HorizontalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>

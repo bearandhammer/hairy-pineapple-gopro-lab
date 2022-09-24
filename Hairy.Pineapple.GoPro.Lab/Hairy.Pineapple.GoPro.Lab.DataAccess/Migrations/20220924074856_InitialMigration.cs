@@ -10,7 +10,7 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "PresetHeader",
+                name: "PresetHeaders",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -26,7 +26,7 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_PresetHeader_UniqueId",
-                table: "PresetHeader",
+                table: "PresetHeaders",
                 column: "UniqueId",
                 unique: true);
         }

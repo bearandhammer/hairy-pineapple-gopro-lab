@@ -8,6 +8,7 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Configuration
     {
         public void Configure(EntityTypeBuilder<PresetHeader> builder)
         {
+            // TODO: Pluralise table
             builder.HasKey(presetHeader => presetHeader.Id);
 
             builder

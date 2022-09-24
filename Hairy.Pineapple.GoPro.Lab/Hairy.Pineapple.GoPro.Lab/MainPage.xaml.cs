@@ -7,12 +7,13 @@ namespace Hairy.Pineapple.GoPro.Lab;
 public partial class MainPage : ContentPage
 {
 	private readonly GoProLabDbContext dbContext;
-	int count = 0;
+	
+	private int count = 0;
 
-	public MainPage()   //GoProLabDbContext dbContextType
+	public MainPage(GoProLabDbContext dbContextType)
     {
 		InitializeComponent();
-		//dbContext = dbContextType;
+		dbContext = dbContextType;
 	}
 
 	private void OnCounterClicked(object sender, EventArgs e)
@@ -31,39 +32,62 @@ public partial class MainPage : ContentPage
 	{
 		try
 		{
-			#region Sample Code (pre-DI)
+            string samplePresetName = "Holy Grail Time-lapse";
 
-			using (GoProLabDbContext dbContext = new())
-			{ 
-				// Migrate
-				dbContext.Database.Migrate();
+            // Add sample record, if one does not exist
+            if (!dbContext.PresetHeaders.Any(ph => ph.Name.Equals(samplePresetName)))
+            {
+                dbContext.PresetHeaders.Add(new PresetHeader
+                {
+                    Description = "This is for a Holy Grail time-lapse.",
+                    Name = samplePresetName
+                });
 
-				string samplePresetName = "Holy Grail Time-lapse";
+                dbContext.SaveChanges();
+            }
 
-				// Add sample record, if one does not exist
-				if (!dbContext.PresetHeaders.Any(ph => ph.Name.Equals(samplePresetName)))
-				{
-					dbContext.PresetHeaders.Add(new PresetHeader
-					{
-						Description = "This is for a Holy Grail time-lapse.",
-						Name = samplePresetName
-                    });
+            // Retrieve sample
+            PresetHeader discoveredPresetHeader =
+                dbContext.PresetHeaders.FirstOrDefault(ph => ph.Name.Equals(samplePresetName));
 
-					dbContext.SaveChanges();
-				}
+            if (discoveredPresetHeader is not null)
+            {
+                TestDbBtn.Text = "DB call succeeded";
+            }
 
-				// Retrieve sample
-				PresetHeader discoveredPresetHeader =
-					dbContext.PresetHeaders.FirstOrDefault(ph => ph.Name.Equals(samplePresetName));
+            #region Sample Code (pre-DI)
 
-				if (discoveredPresetHeader is not null)
-				{
-					TestDbBtn.Text = "DB call succeeded";
-				}
-			}
+            //using (GoProLabDbContext dbContext = new())
+            //{ 
+            //	// Migrate
+            //	dbContext.Database.Migrate();
 
-			#endregion Sample Code (pre-DI)
-		}
+            //	string samplePresetName = "Holy Grail Time-lapse";
+
+            //	// Add sample record, if one does not exist
+            //	if (!dbContext.PresetHeaders.Any(ph => ph.Name.Equals(samplePresetName)))
+            //	{
+            //		dbContext.PresetHeaders.Add(new PresetHeader
+            //		{
+            //			Description = "This is for a Holy Grail time-lapse.",
+            //			Name = samplePresetName
+            //                 });
+
+            //		dbContext.SaveChanges();
+            //	}
+
+            //	// Retrieve sample
+            //	PresetHeader discoveredPresetHeader =
+            //		dbContext.PresetHeaders.FirstOrDefault(ph => ph.Name.Equals(samplePresetName));
+
+            //	if (discoveredPresetHeader is not null)
+            //	{
+            //		TestDbBtn.Text = "DB call succeeded";
+            //	}
+            //}
+
+            #endregion Sample Code (pre-DI)
+        }
         catch (Exception ex)
 		{
 			TestDbBtn.Text = "DB call failed";

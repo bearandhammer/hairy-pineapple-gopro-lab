@@ -8,6 +8,11 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Context
     {
         private static bool initialised = false;
 
+        public GoProLabDbContext()
+        {
+            Database.Migrate();
+        }
+
         public virtual DbSet<PresetHeader> PresetHeaders => Set<PresetHeader>();
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

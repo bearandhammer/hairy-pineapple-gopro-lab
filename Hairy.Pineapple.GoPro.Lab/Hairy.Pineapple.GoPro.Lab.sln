@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31611.283
+VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hairy.Pineapple.GoPro.Lab", "Hairy.Pineapple.GoPro.Lab\Hairy.Pineapple.GoPro.Lab.csproj", "{957BA92F-E3F3-42F3-A4E0-0DD5690ECCAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hairy.Pineapple.GoPro.Lab", "Hairy.Pineapple.GoPro.Lab\Hairy.Pineapple.GoPro.Lab.csproj", "{D610A4D8-4F00-4DCF-AA75-432580A6BDF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hairy.Pineapple.GoPro.Lab.Test", "Hairy.Pineapple.GoPro.Lab.Test\Hairy.Pineapple.GoPro.Lab.Test.csproj", "{0D8675D8-A4F2-4810-8E7F-CBE0C4DE0906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hairy.Pineapple.GoPro.Lab.Test", "Hairy.Pineapple.GoPro.Lab.Test\Hairy.Pineapple.GoPro.Lab.Test.csproj", "{19C25032-4872-4EE4-AB9F-14A38BB41B27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hairy.Pineapple.GoPro.Lab.DataAccess", "Hairy.Pineapple.GoPro.Lab.DataAccess\Hairy.Pineapple.GoPro.Lab.DataAccess.csproj", "{C99D5988-A3CF-4668-90AF-B5BAB3011D54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hairy.Pineapple.GoPro.Lab.EF.Tool", "Hairy.Pineapple.GoPro.Lab.EF.Tool\Hairy.Pineapple.GoPro.Lab.EF.Tool.csproj", "{54A8F270-4EC6-46BF-80A2-6C3186BEC7CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hairy.Pineapple.GoPro.Lab.DataAccess.Entities", "Hairy.Pineapple.GoPro.Lab.DataAccess.Entities\Hairy.Pineapple.GoPro.Lab.DataAccess.Entities.csproj", "{369631E9-C653-4CA7-A8DB-04AA9C634C33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hairy.Pineapple.GoPro.Lab.DataAccess", "Hairy.Pineapple.GoPro.Lab.DataAccess\Hairy.Pineapple.GoPro.Lab.DataAccess.csproj", "{CBE997D2-CCEA-4999-AA41-D5B8AB4DDCDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hairy.Pineapple.GoPro.Lab.DataAccess.Entities", "Hairy.Pineapple.GoPro.Lab.DataAccess.Entities\Hairy.Pineapple.GoPro.Lab.DataAccess.Entities.csproj", "{C0CB4FE3-19AD-4489-BD51-7BDB20956529}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,29 +19,33 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{957BA92F-E3F3-42F3-A4E0-0DD5690ECCAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{957BA92F-E3F3-42F3-A4E0-0DD5690ECCAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{957BA92F-E3F3-42F3-A4E0-0DD5690ECCAD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{957BA92F-E3F3-42F3-A4E0-0DD5690ECCAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{957BA92F-E3F3-42F3-A4E0-0DD5690ECCAD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{957BA92F-E3F3-42F3-A4E0-0DD5690ECCAD}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{0D8675D8-A4F2-4810-8E7F-CBE0C4DE0906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D8675D8-A4F2-4810-8E7F-CBE0C4DE0906}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D8675D8-A4F2-4810-8E7F-CBE0C4DE0906}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D8675D8-A4F2-4810-8E7F-CBE0C4DE0906}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C99D5988-A3CF-4668-90AF-B5BAB3011D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C99D5988-A3CF-4668-90AF-B5BAB3011D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C99D5988-A3CF-4668-90AF-B5BAB3011D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C99D5988-A3CF-4668-90AF-B5BAB3011D54}.Release|Any CPU.Build.0 = Release|Any CPU
-		{369631E9-C653-4CA7-A8DB-04AA9C634C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{369631E9-C653-4CA7-A8DB-04AA9C634C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{369631E9-C653-4CA7-A8DB-04AA9C634C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{369631E9-C653-4CA7-A8DB-04AA9C634C33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D610A4D8-4F00-4DCF-AA75-432580A6BDF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D610A4D8-4F00-4DCF-AA75-432580A6BDF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D610A4D8-4F00-4DCF-AA75-432580A6BDF8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D610A4D8-4F00-4DCF-AA75-432580A6BDF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D610A4D8-4F00-4DCF-AA75-432580A6BDF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D610A4D8-4F00-4DCF-AA75-432580A6BDF8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{19C25032-4872-4EE4-AB9F-14A38BB41B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C25032-4872-4EE4-AB9F-14A38BB41B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C25032-4872-4EE4-AB9F-14A38BB41B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C25032-4872-4EE4-AB9F-14A38BB41B27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A8F270-4EC6-46BF-80A2-6C3186BEC7CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A8F270-4EC6-46BF-80A2-6C3186BEC7CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A8F270-4EC6-46BF-80A2-6C3186BEC7CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A8F270-4EC6-46BF-80A2-6C3186BEC7CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBE997D2-CCEA-4999-AA41-D5B8AB4DDCDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE997D2-CCEA-4999-AA41-D5B8AB4DDCDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE997D2-CCEA-4999-AA41-D5B8AB4DDCDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE997D2-CCEA-4999-AA41-D5B8AB4DDCDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0CB4FE3-19AD-4489-BD51-7BDB20956529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0CB4FE3-19AD-4489-BD51-7BDB20956529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0CB4FE3-19AD-4489-BD51-7BDB20956529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0CB4FE3-19AD-4489-BD51-7BDB20956529}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+		SolutionGuid = {6613CAE4-8758-46F5-8315-7DC791A71D29}
 	EndGlobalSection
 EndGlobal

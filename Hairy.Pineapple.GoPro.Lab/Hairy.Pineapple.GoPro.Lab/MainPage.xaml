@@ -1,19 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Hairy.Pineapple.GoPro.Lab.Content"
+             xmlns:local="clr-namespace:Hairy.Pineapple.GoPro.Lab"
              x:Class="Hairy.Pineapple.GoPro.Lab.MainPage">
 
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#15AF97</Color>
+        <Color x:Key="Secondary">#83D0F5</Color>
+        <Color x:Key="Tertiary">#B5DC18</Color>
+        <Color x:Key="White">White</Color>
+        <Color x:Key="Black">Black</Color>
+        <Style TargetType="Border" x:Key="CardStyle">
+            <Setter Property="BackgroundColor" Value="{ StaticResource Primary }"></Setter>
+            <Setter Property="Stroke" Value="{ StaticResource Secondary }"></Setter>
+            <Setter Property="StrokeThickness" Value="2"></Setter>
+            <Setter Property="Padding" Value="10"></Setter>
+        </Style>
+        <Style TargetType="Image" x:Key="UserImage">
+            <Setter Property="HeightRequest" Value="50"></Setter>
+            <Setter Property="Source" Value="user_light.png"></Setter>
+        </Style>
+        <Style TargetType="Label" x:Key="TitleLabel">
+            <Setter Property="FontAttributes" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="TextColor" Value="{ StaticResource White }" />
+        </Style>
+        <Style TargetType="Line" x:Key="LineDivider">
+            <Setter Property="Stroke" Value="{ StaticResource Tertiary }" />
+            <Setter Property="X2" Value="200" />
+        </Style>
+        <Style TargetType="Label" x:Key="DescriptionLabel">
+            <Setter Property="TextColor" Value="{ StaticResource White }" />
+        </Style>
+    </ContentPage.Resources>
+    
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
-            VerticalOptions="Center">
+            VerticalOptions="Start">
 
-            <Image
+            <!--<Image
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" />-->
 
             <Label
                 Text="Hello, World!"
@@ -28,13 +60,173 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
+            <Border Style="{ StaticResource Key=CardStyle}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,4*" ColumnSpacing="6">
+                    <Image Grid.Column="0" Style="{ StaticResource Key=UserImage}" HorizontalOptions="Start" />
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" Spacing="10">
+                        <Label Style="{StaticResource Key=TitleLabel}" Text="Puupei Grint" HorizontalOptions="Center"></Label>
+                        <Line Style="{StaticResource Key=LineDivider}" HorizontalOptions="Center" />
+                        <Label Style="{StaticResource Key=DescriptionLabel}" Text="He is our lord and saviour, always on the look out to create pain." HorizontalOptions="Center"></Label>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Border Style="{ StaticResource Key=CardStyle}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,4*" ColumnSpacing="6">
+                    <Image Grid.Column="0" Style="{ StaticResource Key=UserImage}" HorizontalOptions="Start" />
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" Spacing="10">
+                        <Label Style="{StaticResource Key=TitleLabel}" Text="Lewis Grint" HorizontalOptions="Center"></Label>
+                        <Line Style="{StaticResource Key=LineDivider}" HorizontalOptions="Center" />
+                        <Label Style="{StaticResource Key=DescriptionLabel}" Text="An obediant servant to the lord and saviour, Puupei Grint." HorizontalOptions="Center"></Label>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Border Style="{ StaticResource Key=CardStyle}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,4*" ColumnSpacing="6">
+                    <Image Grid.Column="0" Style="{ StaticResource Key=UserImage}" HorizontalOptions="Start" />
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" Spacing="10">
+                        <Label Style="{StaticResource Key=TitleLabel}" Text="Claire Grint" HorizontalOptions="Center"></Label>
+                        <Line Style="{StaticResource Key=LineDivider}" HorizontalOptions="Center" />
+                        <Label Style="{StaticResource Key=DescriptionLabel}" Text="An obediant servant to the lord and saviour, Puupei Grint." HorizontalOptions="Center"></Label>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Border Style="{ StaticResource Key=CardStyle}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,4*" ColumnSpacing="6">
+                    <Image Grid.Column="0" Style="{ StaticResource Key=UserImage}" HorizontalOptions="Start" />
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" Spacing="10">
+                        <Label Style="{StaticResource Key=TitleLabel}" Text="Claire Grint" HorizontalOptions="Center"></Label>
+                        <Line Style="{StaticResource Key=LineDivider}" HorizontalOptions="Center" />
+                        <Label Style="{StaticResource Key=DescriptionLabel}" Text="An obediant servant to the lord and saviour, Puupei Grint." HorizontalOptions="Center"></Label>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Border Style="{ StaticResource Key=CardStyle}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,4*" ColumnSpacing="6">
+                    <Image Grid.Column="0" Style="{ StaticResource Key=UserImage}" HorizontalOptions="Start" />
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" Spacing="10">
+                        <Label Style="{StaticResource Key=TitleLabel}" Text="Claire Grint" HorizontalOptions="Center"></Label>
+                        <Line Style="{StaticResource Key=LineDivider}" HorizontalOptions="Center" />
+                        <Label Style="{StaticResource Key=DescriptionLabel}" Text="An obediant servant to the lord and saviour, Puupei Grint." HorizontalOptions="Center"></Label>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Border Style="{ StaticResource Key=CardStyle}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,4*" ColumnSpacing="6">
+                    <Image Grid.Column="0" Style="{ StaticResource Key=UserImage}" HorizontalOptions="Start" />
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" Spacing="10">
+                        <Label Style="{StaticResource Key=TitleLabel}" Text="Claire Grint" HorizontalOptions="Center"></Label>
+                        <Line Style="{StaticResource Key=LineDivider}" HorizontalOptions="Center" />
+                        <Label Style="{StaticResource Key=DescriptionLabel}" Text="An obediant servant to the lord and saviour, Puupei Grint." HorizontalOptions="Center"></Label>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Border Style="{ StaticResource Key=CardStyle}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,4*" ColumnSpacing="6">
+                    <Image Grid.Column="0" Style="{ StaticResource Key=UserImage}" HorizontalOptions="Start" />
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" Spacing="10">
+                        <Label Style="{StaticResource Key=TitleLabel}" Text="Claire Grint" HorizontalOptions="Center"></Label>
+                        <Line Style="{StaticResource Key=LineDivider}" HorizontalOptions="Center" />
+                        <Label Style="{StaticResource Key=DescriptionLabel}" Text="An obediant servant to the lord and saviour, Puupei Grint." HorizontalOptions="Center"></Label>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Border Style="{ StaticResource Key=CardStyle}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40,0,0,40" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,4*" ColumnSpacing="6">
+                    <Image Grid.Column="0" Style="{ StaticResource Key=UserImage}" HorizontalOptions="Start" />
+                    <VerticalStackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" Spacing="10">
+                        <Label Style="{StaticResource Key=TitleLabel}" Text="Claire Grint" HorizontalOptions="Center"></Label>
+                        <Line Style="{StaticResource Key=LineDivider}" HorizontalOptions="Center" />
+                        <Label Style="{StaticResource Key=DescriptionLabel}" Text="An obediant servant to the lord and saviour, Puupei Grint." HorizontalOptions="Center"></Label>
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <!--<Grid>
+                <Frame Style="{ StaticResource FrameStyle }">
+                    <Image Source="user.png" HeightRequest="50" HorizontalOptions="Start" />
+                </Frame>
+                <Label Style="{ StaticResource LabelStyle }" Text="Puupei Grint" HorizontalOptions="Center" Margin="15" FontSize="16" />
+                <Label Style="{ StaticResource LabelStyle }" Text="This is a description!!!" HorizontalOptions="Center" Margin="10" VerticalOptions="Center"/>
+            </Grid>
+
+            <Grid>
+                <Frame Style="{ StaticResource FrameStyle }">
+                    <Image Source="user.png" HeightRequest="50" HorizontalOptions="Start" />
+                </Frame>
+                <Label Style="{ StaticResource LabelStyle }" Text="Puupei Grint" HorizontalOptions="Center" Margin="15" FontSize="16" />
+                <Label Style="{ StaticResource LabelStyle }" Text="This is a description!!!" HorizontalOptions="Center" Margin="10" VerticalOptions="Center"/>
+            </Grid>
+
+            <Grid>
+                <Frame Style="{ StaticResource FrameStyle }">
+                    <Image Source="user.png" HeightRequest="50" HorizontalOptions="Start" />
+                </Frame>
+                <Label Style="{ StaticResource LabelStyle }" Text="Puupei Grint" HorizontalOptions="Center" Margin="15" FontSize="16" />
+                <Label Style="{ StaticResource LabelStyle }" Text="This is a description!!!" HorizontalOptions="Center" Margin="10" VerticalOptions="Center"/>
+            </Grid>-->
+            <!--<controls:CardView BorderColour="DarkGray"
+                              CardTitle="Slavko Vlasic"
+                              CardDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit dolor, convallis non interdum."
+                              IconBackgroundColour="SlateGray"
+                              IconImageSource="user.png" />-->
+
+            <!--<controls:CardView 
+                CardDescription="A humble servant of our lord and saviour, Puupei Grint."
+                CardTitle="Lewis Grint"
+                IconImageSource="user.png"
+                />
+
+            <controls:CardView 
+                CardDescription="A humble servant of our lord and saviour, Puupei Grint."
+                CardTitle="Claire Grint"
+                IconImageSource="user.png"
+                />-->
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
+                <Button Text="Fake Button 1" />
+
+                <Button Grid.Column="1"
+                    Text="Fake Button 2" />
+            </Grid>
+
             <Label
-                Text="{ Binding PresetHeaderCount }"
+                Text="{Binding PresetHeaderCount }"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Preset header count"
                 FontSize="18"
                 HorizontalOptions="Center" />
-            
+
             <Button
                 x:Name="CounterBtn"
                 Text="Click me"

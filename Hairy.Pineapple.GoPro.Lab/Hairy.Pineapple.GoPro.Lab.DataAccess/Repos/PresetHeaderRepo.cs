@@ -1,6 +1,7 @@
 ﻿using Hairy.Pineapple.GoPro.Lab.DataAccess.Context;
 using Hairy.Pineapple.GoPro.Lab.DataAccess.Entities.Models;
 using Hairy.Pineapple.GoPro.Lab.DataAccess.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Repos
 {
@@ -13,19 +14,23 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Repos
             appDbContext = dbContextType;
         }
 
-        public Task<PresetHeader> DeletePresetHeaderByIdAsync(long id)
+        public async Task<PresetHeader?> DeletePresetHeaderByIdAsync(long id)
         {
-            throw new NotImplementedException();
+            PresetHeader? presetHeaderToDelete = await GetPresetHeaderByIdAsync(id);
+
+            if (presetHeaderToDelete is not null)
+            {
+                appDbContext.PresetHeaders.Remove(presetHeaderToDelete);
+                await appDbContext.SaveChangesAsync();
+            }
+
+            return presetHeaderToDelete;
         }
 
-        public Task<IEnumerable<PresetHeader>> GetAllPresetHeadersAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IEnumerable<PresetHeader>> GetAllPresetHeadersAsync() =>
+            await appDbContext.PresetHeaders.ToListAsync();
 
-        public Task<PresetHeader> GetPresetHeaderByIdAsync(long id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<PresetHeader?> GetPresetHeaderByIdAsync(long id) =>
+            await appDbContext.PresetHeaders.FindAsync(id);
     }
 }

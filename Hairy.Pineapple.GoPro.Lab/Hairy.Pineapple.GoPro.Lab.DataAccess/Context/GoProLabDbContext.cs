@@ -6,8 +6,6 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Context
 {
     public class GoProLabDbContext : DbContext
     {
-        private static bool initialised = false;
-
         public GoProLabDbContext()
         {
             Database.Migrate();
@@ -22,6 +20,8 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Context
             
             string fileName = $"{sqlitePath}\ttest.db";
 
+            #region Better Mechanism Required
+
             //if (!initialised)
             //{ 
             //    if (File.Exists(fileName))
@@ -32,10 +32,10 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Context
             //    File.Create(fileName);
             //}
 
+            #endregion Better Mechanism Required
+
             optionsBuilder.UseSqlite($"Data Source={fileName}", options =>
                 options.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name));
-
-            initialised = true;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

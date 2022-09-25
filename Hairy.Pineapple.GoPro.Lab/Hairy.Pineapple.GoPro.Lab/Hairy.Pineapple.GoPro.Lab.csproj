@@ -52,4 +52,9 @@
 	  <ProjectReference Include="..\Hairy.Pineapple.GoPro.Lab.DataAccess\Hairy.Pineapple.GoPro.Lab.DataAccess.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Extensions\" />
+	  <Folder Include="ViewModels\Base\" />
+	</ItemGroup>
+
 </Project>

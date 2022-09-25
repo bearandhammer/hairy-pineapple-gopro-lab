@@ -9,29 +9,27 @@ namespace Hairy.Pineapple.GoPro.Lab.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
-        //private readonly PresetHeaderRepo presetHeaderRepo;
+        private readonly IPresetHeaderRepo presetHeaderRepo;
 
         // TODO - change to a domain model
         public ObservableCollection<PresetHeader> PresetHeaders { get; set; } = new ObservableCollection<PresetHeader>();
 
         public int PresetHeaderCount => PresetHeaders.Count;
 
-        //public MainPageViewModel(PresetHeaderRepo presetHeaderRepoType)
-        public MainPageViewModel()
+        public MainPageViewModel(IPresetHeaderRepo presetHeaderRepoType)
         {
+            presetHeaderRepo = presetHeaderRepoType;
+
             LoadPresetHeaders();
         }
 
-        private async void LoadPresetHeaders()
+        private void LoadPresetHeaders()
         {
             try
             {
-                // TODO: Remove temp code and fix DI
-                using (GoProLabDbContext appDbContext = new GoProLabDbContext())
+                Task runningTask = Task.Run(async () =>
                 {
-                    IPresetHeaderRepo repo = new PresetHeaderRepo(appDbContext);
-
-                    IEnumerable<PresetHeader> presetHeaders = await repo.GetAllPresetHeadersAsync();
+                    IEnumerable<PresetHeader> presetHeaders = await presetHeaderRepo.GetAllPresetHeadersAsync();
 
                     if (presetHeaders is not null)
                     {
@@ -42,7 +40,9 @@ namespace Hairy.Pineapple.GoPro.Lab.ViewModels
 
                         OnPropertyChanged(nameof(PresetHeaders));
                     }
-                }
+                });
+
+                runningTask.Wait();
             }
             catch (Exception ex)
             {

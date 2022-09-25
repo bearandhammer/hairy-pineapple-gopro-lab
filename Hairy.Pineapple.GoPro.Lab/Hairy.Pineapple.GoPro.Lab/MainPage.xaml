@@ -28,6 +28,13 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
+            <Label
+                Text="{ Binding PresetHeaderCount }"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Preset header count"
+                FontSize="18"
+                HorizontalOptions="Center" />
+            
             <Button
                 x:Name="CounterBtn"
                 Text="Click me"

@@ -4,10 +4,10 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Interfaces
 {
     public interface IPresetHeaderRepo
     {
-        Task<PresetHeader> DeletePresetHeaderByIdAsync(long id);
+        Task<PresetHeader?> DeletePresetHeaderByIdAsync(long id);
 
         Task<IEnumerable<PresetHeader>> GetAllPresetHeadersAsync();
 
-        Task<PresetHeader> GetPresetHeaderByIdAsync(long id);
+        Task<PresetHeader?> GetPresetHeaderByIdAsync(long id);
     }
 }

@@ -18,10 +18,10 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		builder.Services.AddSingleton<MainPage>();
-		builder.Services.AddTransient<MainPageViewModel>();
-		builder.Services.AddTransient<IPresetHeaderRepo, PresetHeaderRepo>();
 		builder.Services.AddDbContext<GoProLabDbContext>();
+		builder.Services.AddSingleton<IPresetHeaderRepo, PresetHeaderRepo>();
+		builder.Services.AddSingleton<MainPageViewModel>();
+		builder.Services.AddSingleton<MainPage>();
 
 		return builder.Build();
 	}

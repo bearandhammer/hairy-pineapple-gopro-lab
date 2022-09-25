@@ -22,15 +22,15 @@ namespace Hairy.Pineapple.GoPro.Lab.DataAccess.Context
             
             string fileName = $"{sqlitePath}\ttest.db";
 
-            if (!initialised)
-            { 
-                if (File.Exists(fileName))
-                {
-                    File.Delete(fileName);
-                }
+            //if (!initialised)
+            //{ 
+            //    if (File.Exists(fileName))
+            //    {
+            //        File.Delete(fileName);
+            //    }
 
-                File.Create(fileName);
-            }
+            //    File.Create(fileName);
+            //}
 
             optionsBuilder.UseSqlite($"Data Source={fileName}", options =>
                 options.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name));

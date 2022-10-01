@@ -43,3 +43,4 @@ Currently designated as:
 1. Targeting a GoPro Hero 10.
 
 I am happy for the code to be used, lifted/shifted, etc. Just a cautionary note, however; I am a web developer (with some WPF experience) toying with .NET MAUI, so any code here should be examined by an authorative source before use. :sweat_smile:
+dotnet build -c Release -f net6.0-android
